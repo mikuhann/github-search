@@ -47,6 +47,11 @@ img {
   overflow: hidden;
   padding: 0 2rem;
 }
+.spinner {
+  width: 200px;
+  margin: auto;
+  display: block;
+}
 
 /* Text Styles*/
 .x-large {
