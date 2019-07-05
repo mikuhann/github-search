@@ -314,7 +314,12 @@ img {
 
 .round-img {
   border-radius: 50%;
+}
+.round-img-small {
   width: 60px;
+}
+.round-img-large {
+  width: 150px;
 }
 
 /* Forms */
