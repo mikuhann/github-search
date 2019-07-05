@@ -52,6 +52,10 @@ img {
   margin: auto;
   display: block;
 }
+.alert-close {
+  float: right;
+  cursor: pointer;
+}
 
 /* Text Styles*/
 .x-large {
