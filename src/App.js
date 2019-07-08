@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from "react";
+import React, {useState, useEffect, Fragment} from "react";
 import axios from "axios";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
@@ -58,16 +58,21 @@ const App = () => {
     setLoading(false);
   };
 
-  let alertTimeout;
+
 
   const showAlert = (msg, type) => {
     setAlert({msg, type});
-    alertTimeout = setTimeout(() => setAlert(null),3000);
   };
+
+  useEffect(() => {
+    let alertTimeout = setInterval(() => setAlert(null), 3000);
+    return () => {
+      clearTimeout(alertTimeout);
+    };
+  }, []);
 
   const closeAlert = () => {
     setAlert(null);
-    clearTimeout(alertTimeout)
   };
   return (
     <Router>
