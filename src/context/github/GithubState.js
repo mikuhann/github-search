@@ -20,7 +20,6 @@ const GithubState = (props) => {
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
 
-  //search users
   const searchUsers =  async (text) => {
     setLoading();
 
@@ -33,7 +32,7 @@ const GithubState = (props) => {
       payload: res.data.items
     });
   };
-  //get user
+
   const getUser = async (username) => {
     setLoading();
 
@@ -46,7 +45,7 @@ const GithubState = (props) => {
       payload: res.data
     });
   };
-  //get repos
+
   const getUserRepos = async (username) => {
     setLoading();
 
@@ -61,10 +60,8 @@ const GithubState = (props) => {
     });
   };
 
-  //clear users
   const clearUsers = () => dispatch({type: CLEAR_USERS});
 
-  //set loading
   const setLoading = () => dispatch({type: SET_LOADING});
 
   return <GithubContext.Provider
